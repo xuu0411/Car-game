@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour
         float length = flag.transform.position.x - car.transform.position.x;
         // 將旗子與汽車的距離顯示在UI上面
         distance.GetComponent<Text>().text = "距離目標還有 " + length.ToString("F2") + "m";
-        score.GetComponent<Text>().text = "得分 " + length.ToString("F2") + "m";
+
+        float ScoreNumber = 100 / length;
+        if (ScoreNumber <= 0) ;
+        ScoreNumber = 0;
+        score.GetComponent<Text>().text = "得分 " + ScoreNumber.ToString("F2");
     }
 }
