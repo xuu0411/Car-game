@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
         flag = GameObject.Find("flag");
         distance = GameObject.Find("Distance");
         score = GameObject.Find("Score");
+        Debug.Log("Hello World");
     }
 
     void Update()
@@ -26,8 +27,8 @@ public class GameManager : MonoBehaviour
         distance.GetComponent<Text>().text = "距離目標還有 " + length.ToString("F2") + "m";
 
         float ScoreNumber = 100 / length;
-        if (ScoreNumber <= 0) ;
-        ScoreNumber = 0;
+        if (ScoreNumber <=0)
+             ScoreNumber = 0;
         score.GetComponent<Text>().text = "得分 " + ScoreNumber.ToString("F2");
     }
 }
